@@ -5,14 +5,15 @@ import           Commands.Extra
 --import           Commands.Servers.Servant.Types
 import           Commands.Servers.Servant.V
 import           Commands.Servers.Servant.API.Types
-import Data.HTypes ((:~>))
+--import Data.HTypes ((:~>))
 
 import qualified Network.Wai                    as Wai
 import qualified Network.Wai.Handler.Warp       as Wai
-import           Servant hiding((:~>))
+import           Servant --hiding((:~>))
 --import           Servant.Client (Client,client)
 import qualified Data.ByteString.Lazy.Char8    as BS
 import           Control.Lens
+import Control.Natural --hiding((:~>))
 
 import           Control.Monad.Trans.Either
 import           Control.Monad.Reader
@@ -20,6 +21,8 @@ import           Control.Monad.Reader
 -- import Control.Concurrent.STM
 -- import Data.Function ((&))
 import Control.Monad.Except
+
+type Nat = (:~>)
 
 natlinkIO :: VSettings m c v -> IO ()
 natlinkIO settings = do
